@@ -17,7 +17,8 @@ public class TheaterRoom {
 	private String name;
 //	private String[][] seat;
 
-	@OneToOne(mappedBy = "theaterRoom", cascade = CascadeType.ALL)
+	@OneToOne
+	@JoinColumn(name = "cep_response_id")
 	private CepResponse endereco;
 
 	public TheaterRoom() {

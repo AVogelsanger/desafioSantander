@@ -32,4 +32,6 @@ public class TheaterRoomController {
     public TheaterRoomDTO insert(@RequestBody TheaterRoomDTO dto){
         return service.insert(dto);
     }
+
+
 }

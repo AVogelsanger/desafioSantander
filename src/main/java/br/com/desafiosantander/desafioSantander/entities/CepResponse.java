@@ -19,11 +19,6 @@ public class CepResponse {
     private String uf;
     private String ibge;
 
-    @OneToOne
-    @MapsId
-    private TheaterRoom theaterRoom;
-
-
     // Getters e toString() para exibir os dados de forma organizada
     public Long getId() {
         return id;

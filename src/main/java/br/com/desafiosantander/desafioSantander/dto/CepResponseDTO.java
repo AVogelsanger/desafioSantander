@@ -1,6 +1,7 @@
 package br.com.desafiosantander.desafioSantander.dto;
 
 import br.com.desafiosantander.desafioSantander.entities.CepResponse;
+import br.com.desafiosantander.desafioSantander.entities.TheaterRoom;
 
 public class CepResponseDTO {
 
@@ -13,7 +14,7 @@ public class CepResponseDTO {
     private String uf;
     private String ibge;
 
-    // private TheaterRoom theaterRoom;
+    private TheaterRoom theaterRoom;
 
     public CepResponseDTO(CepResponse entity) {
         id = entity.getId();
