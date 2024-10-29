@@ -21,6 +21,7 @@ public class TheaterRoomController {
 
     @Autowired
     private TheaterRoomService service;
+
     @GetMapping(value = "/{id}")
     public ResponseEntity<TheaterRoomDTO> findById(@PathVariable Long id){
         return ResponseEntity.ok(service.findById(id));
@@ -40,5 +41,16 @@ public class TheaterRoomController {
         return ResponseEntity.created(uri).body(dto);
     }
 
+
+    @PutMapping(value = "/{id}")
+    public ResponseEntity<TheaterRoomDTO> update(@PathVariable Long id, @RequestBody TheaterRoomDTO dto){
+        return ResponseEntity.ok(service.update(id, dto));
+    }
+
+    @DeleteMapping(value = "/{id}")
+    public ResponseEntity<Void> delete(@PathVariable Long id){
+        service.delete(id);
+        return ResponseEntity.noContent().build();
+    }
 
 }

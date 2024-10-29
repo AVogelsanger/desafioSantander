@@ -45,4 +45,20 @@ public class TheaterRoomService {
         return new TheaterRoomDTO(entity);
     }
 
+    @Transactional
+    public TheaterRoomDTO update(Long id, TheaterRoomDTO dto) {
+        TheaterRoom entity = repository.getReferenceById(id);
+
+        entity.setName(dto.getName());
+        entity.setScreen(dto.getScreen());
+        entity.setEndereco(entity.getEndereco());
+        entity = repository.save(entity);
+        return new TheaterRoomDTO(entity);
+    }
+
+    @Transactional
+    public void delete(Long id) {
+        repository.deleteById(id);
+    }
+
 }
