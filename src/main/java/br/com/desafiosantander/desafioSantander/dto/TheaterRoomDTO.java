@@ -26,6 +26,12 @@ public class TheaterRoomDTO {
         endereco = entity.getEndereco();
     }
 
+    public TheaterRoomDTO(String screen, String name, CepResponse endereco) {
+        this.screen = screen;
+        this.name = name;
+        this.endereco = endereco;
+    }
+
     public Long getId() {
         return id;
     }
@@ -40,7 +46,4 @@ public class TheaterRoomDTO {
 
     public CepResponse getEndereco() { return endereco; }
 
-//    public void setEndereco(CepResponse endereco) {
-//        this.endereco = endereco;
-//    }
 }
