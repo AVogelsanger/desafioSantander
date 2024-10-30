@@ -46,7 +46,4 @@ public class TheaterRoomDTO {
 
     public CepResponse getEndereco() { return endereco; }
 
-//    public void setEndereco(CepResponse endereco) {
-//        this.endereco = endereco;
-//    }
 }

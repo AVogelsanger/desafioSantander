@@ -1,5 +1,6 @@
 package br.com.desafiosantander.desafioSantander;
 
+import br.com.desafiosantander.desafioSantander.controllers.TheaterRoomController;
 import br.com.desafiosantander.desafioSantander.dto.TheaterRoomDTO;
 import br.com.desafiosantander.desafioSantander.entities.CepResponse;
 import br.com.desafiosantander.desafioSantander.entities.Customer;
@@ -24,18 +25,6 @@ public class DesafioSantanderApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-
-		try {
-
-			// Busca o CEP usando o serviço de CEP
-			CepResponse endereco = CepResponseService.buscarCep("04297-000");
-
-			System.out.println(endereco);
-
-		} catch (IOException | InterruptedException e) {
-			System.out.println("Erro ao buscar o CEP: " + e.getMessage());
-		}
-
 
 		//  ------ cinema
 		Scanner scan = new Scanner(System.in);
@@ -100,8 +89,8 @@ public class DesafioSantanderApplication implements CommandLineRunner {
 
 					// constructor room
 					TheaterRoomDTO dto = new TheaterRoomDTO(screen, nameRoom, CepResponseService.buscarCep(zipCode));
-					TheaterRoomService service = new TheaterRoomService();
-					TheaterRoomDTO insert = service.insert(dto);
+					TheaterRoomController controller = new TheaterRoomController();
+					TheaterRoomDTO insert = controller.insert(dto).getBody();
 					System.out.println(insert);
 
 
