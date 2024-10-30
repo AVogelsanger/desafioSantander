@@ -21,6 +21,8 @@ public class TheaterRoomService {
     @Autowired
     private CepResponseRepository cepResponseRepository;
 
+    public TheaterRoomService() {  }
+
     @Transactional(readOnly = true)
     public TheaterRoomDTO findById(Long id) {
         TheaterRoom theaterRoom = repository.findById(id).get();
