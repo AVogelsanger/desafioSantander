@@ -1,8 +1,6 @@
 package br.com.desafiosantander.desafioSantander.controllers;
 
 import br.com.desafiosantander.desafioSantander.dto.CepResponseDTO;
-import br.com.desafiosantander.desafioSantander.dto.TheaterRoomDTO;
-import br.com.desafiosantander.desafioSantander.entities.CepResponse;
 import br.com.desafiosantander.desafioSantander.services.CepResponseService;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -28,4 +26,5 @@ public class CepResponseController {
     public CepResponseDTO insert(@RequestBody CepResponseDTO dto){
         return service.insert(dto);
     }
+
 }
