@@ -68,9 +68,9 @@ public class DesafioSantanderApplication implements CommandLineRunner {
 			switch (number) {
 				case 1:
 
-					System.out.println("***Theater Room***");
-					System.out.print("id: ");
-					Long id = scan.nextLong();
+//					System.out.println("***Theater Room***");
+//					System.out.print("id: ");
+//					Long id = scan.nextLong();
 
 					System.out.print("Screen Type: ");
 					String screen = scan.next()+scan.nextLine();
@@ -99,8 +99,7 @@ public class DesafioSantanderApplication implements CommandLineRunner {
 					String zipCode = scan.next();
 
 					// constructor room
-					room = new TheaterRoom(id, screen, nameRoom, CepResponseService.buscarCep(zipCode));
-					TheaterRoomDTO dto = new TheaterRoomDTO(room);
+					TheaterRoomDTO dto = new TheaterRoomDTO(screen, nameRoom, CepResponseService.buscarCep(zipCode));
 					TheaterRoomService service = new TheaterRoomService();
 					TheaterRoomDTO insert = service.insert(dto);
 					System.out.println(insert);
