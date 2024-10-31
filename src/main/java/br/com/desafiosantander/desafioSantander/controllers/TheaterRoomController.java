@@ -32,7 +32,7 @@ public class TheaterRoomController {
         return ResponseEntity.ok(service.findAll(pageable));
     }
 
-    @PostMapping("/cinema/insert")
+    @PostMapping()
     public ResponseEntity<TheaterRoomDTO> insert(@RequestBody TheaterRoomDTO dto){
         dto = service.insert(dto);
         URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id")
