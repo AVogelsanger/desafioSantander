@@ -61,8 +61,8 @@ public class TheaterRoom {
 	public void setName(String name) {
 		this.name = name;
 	}
-	
-//	public String[][] getSeat() {
+
+	//	public String[][] getSeat() {
 //		return seat;
 //	}
 //

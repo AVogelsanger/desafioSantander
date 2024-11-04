@@ -11,6 +11,8 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.io.IOException;
+
 
 @Service
 public class TheaterRoomService {
@@ -36,7 +38,8 @@ public class TheaterRoomService {
     }
 
     @Transactional
-    public TheaterRoomDTO insert(TheaterRoomDTO dto) {
+    public TheaterRoomDTO insert(TheaterRoomDTO dto) throws IOException, InterruptedException {
+        dto.setEndereco(CepResponseService.buscarCep(dto.getZipCode()));
         CepResponse cep = cepResponseRepository.save(dto.getEndereco());
 
         TheaterRoom entity = new TheaterRoom();

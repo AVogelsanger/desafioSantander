@@ -11,6 +11,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
+import java.io.IOException;
 import java.net.URI;
 import java.util.List;
 import java.util.Optional;
@@ -33,7 +34,7 @@ public class TheaterRoomController {
     }
 
     @PostMapping()
-    public ResponseEntity<TheaterRoomDTO> insert(@RequestBody TheaterRoomDTO dto){
+    public ResponseEntity<TheaterRoomDTO> insert(@RequestBody TheaterRoomDTO dto) throws IOException, InterruptedException {
         dto = service.insert(dto);
         URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id")
                 .buildAndExpand(dto.getId())
